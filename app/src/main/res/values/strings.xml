@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ttt</string>
     <string name="dima">Димася топ</string>
+    <string name="gor">Введите название города</string>
 </resources>

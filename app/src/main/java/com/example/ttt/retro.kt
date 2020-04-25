@@ -25,4 +25,8 @@ class NetworkService private constructor() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    fun getJSONApi(): JSONPlaceHolderApi? {
+        return mRetrofit.create(JSONPlaceHolderApi::class.java)
+    }
 }

@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun sendCityToServer(s: String){
         OkHttpClient()
     }
+    
     private fun getCity() = gorod_edit.text.toString()
     val URL = "http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&appid=54b2213f4dfeae13b79bbbb1ee45a04b"
 }
