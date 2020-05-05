@@ -3,21 +3,20 @@ package com.example.ttt.activities
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.presenter.InjectPresenter
-import com.arellomobile.mvp.presenter.PresenterType
-import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.ttt.R
 import com.example.ttt.data.Repository
 import com.example.ttt.presenters.ShowTempPresenter
-import com.example.ttt.views.showTempView
+import com.example.ttt.views.ShowTempView
 import kotlinx.android.synthetic.main.activity_main.*
+import moxy.MvpAppCompatActivity
+import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
 
-class MainActivity : MvpAppCompatActivity(), showTempView {
+class MainActivity : MvpAppCompatActivity(), ShowTempView {
 
     val repository: Repository = Repository()
 
-    @InjectPresenter(presenterId = "", tag = "", type = PresenterType.GLOBAL)
+    @InjectPresenter
     lateinit var showTempPresenter: ShowTempPresenter
 
     @ProvidePresenter
