@@ -1,17 +1,16 @@
 package com.example.ttt.presenters
 
-import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
 import com.example.ttt.R
 import com.example.ttt.data.Repository
 import com.example.ttt.data.models.Post
-import com.example.ttt.views.showTempView
+import com.example.ttt.views.ShowTempView
+import moxy.InjectViewState
+import moxy.MvpPresenter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-@InjectViewState
-class ShowTempPresenter(private val repository: Repository): MvpPresenter<showTempView>() {
+class ShowTempPresenter(private val repository: Repository): MvpPresenter<ShowTempView>() {
 
     fun getTemp(city: String) {
         if (city.trim().isEmpty()){
