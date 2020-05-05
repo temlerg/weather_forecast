@@ -1,4 +1,4 @@
-package com.example.ttt
+package com.example.ttt.data.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,11 +9,12 @@ class NetworkService private constructor() {
 
     companion object {
         private var mInstance: NetworkService? = null
-        private const val BASE_URL = "https://jsonplaceholder.typicode.com"
+        private const val BASE_URL = "http://api.openweathermap.org"
         val instance: NetworkService?
             get() {
                 if (mInstance == null) {
-                    mInstance = NetworkService()
+                    mInstance =
+                        NetworkService()
                 }
                 return mInstance
             }
@@ -26,7 +27,7 @@ class NetworkService private constructor() {
             .build()
     }
 
-    fun getJSONApi(): JSONPlaceHolderApi? {
+    fun getJSONApi(): JSONPlaceHolderApi {
         return mRetrofit.create(JSONPlaceHolderApi::class.java)
     }
 }

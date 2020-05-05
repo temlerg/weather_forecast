@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -34,6 +36,13 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //MVP(Moxy)
+    implementation 'com.arello-mobile:moxy:1.5.5'
+    implementation 'com.arello-mobile:moxy-android:1.5.5'
+    implementation 'tech.schoolhelper:moxy-x-androidx:1.7.0'
+    implementation 'tech.schoolhelper:moxy-x-material:1.7.0'
+    kapt 'com.arello-mobile:moxy-compiler:1.5.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
