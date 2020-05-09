@@ -3,4 +3,6 @@
     <string name="dima">Димася топ</string>
     <string name="gor">Введите название города</string>
     <string name="error_empty_city_input">Строка не должна быть пустой</string>
+    <string name="text_in_bot_main">Показать погоду</string>
+    <string name="settings_text_main">Настройки</string>
 </resources>
