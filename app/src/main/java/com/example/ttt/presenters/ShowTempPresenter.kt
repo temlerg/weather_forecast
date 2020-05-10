@@ -1,5 +1,6 @@
 package com.example.ttt.presenters
 
+import android.util.Log
 import com.example.ttt.R
 import com.example.ttt.data.Repository
 import com.example.ttt.data.models.Post
@@ -9,10 +10,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ShowTempPresenter(private val repository: Repository): MvpPresenter<ShowTempView>() {
+class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowTempView>() {
 
     fun getTemp(city: String) {
-        if (city.trim().isEmpty()){
+        if (city.trim().isEmpty()) {
             viewState.showError(R.string.error_empty_city_input)
             return
         }
@@ -28,10 +29,16 @@ class ShowTempPresenter(private val repository: Repository): MvpPresenter<ShowTe
             override fun onResponse(call: Call<Post>, response: Response<Post>) {
                 viewState.endSending()
 
-                if (response.isSuccessful){
-                    val temp = response.body().toString()
-                    viewState.showSuccess(temp)
-                }else{
+                if (response.isSuccessful) {
+                    if (response.body() != null){
+                        val temp = repository.getWeatherToday(response.body()!!)
+                        if (temp != null)
+                            viewState.showSuccess(temp)
+                        else
+                            viewState.showError("error")
+                    }else
+                        viewState.showError("error")
+                } else {
                     viewState.showError(response.errorBody().toString())
                 }
             }

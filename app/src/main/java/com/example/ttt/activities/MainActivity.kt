@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Toast
 import com.example.ttt.R
 import com.example.ttt.data.Repository
+import com.example.ttt.data.models.WeatherFiveDays
+import com.example.ttt.data.models.WeatherToday
 import com.example.ttt.presenters.ShowTempPresenter
 import com.example.ttt.views.ShowTempView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,7 +32,7 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
 
 
         search_button.setOnClickListener {
-            showTempPresenter.getTemp("Moscow")
+            showTempPresenter.getTemp("Москва")
         }
     }
     
@@ -44,8 +46,11 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
         progressBar.visibility = View.GONE
     }
 
-    override fun showSuccess(temp: String) {
-        Toast.makeText(this, temp, Toast.LENGTH_LONG).show()
+    override fun showSuccess(temp: WeatherToday) {
+        Toast.makeText(this, temp.city, Toast.LENGTH_LONG).show()
+    }
+
+    override fun showSuccess(temp: WeatherFiveDays) {
     }
 
     override fun showError(error: String) {

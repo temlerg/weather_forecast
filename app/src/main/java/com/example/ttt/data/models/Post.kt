@@ -5,12 +5,6 @@ import com.google.gson.annotations.SerializedName
 
 
 data class Post(
-    @SerializedName("Codebeautify")
-    @Expose
-    val codebeautify: Codebeautify
-)
-
-data class Codebeautify(
     @SerializedName("cod")
     @Expose
     val cod: String?,
@@ -25,8 +19,7 @@ data class Codebeautify(
     val list: List<Any> = ArrayList<Any>(),
     @SerializedName("city")
     @Expose
-    val city: City?
-)
+    val city: City?)
 
 data class City(
     @SerializedName("id")
