@@ -19,7 +19,7 @@ class ShowTempPresenter(private val repository: Repository): MvpPresenter<ShowTe
 
         viewState.startSending()
 
-        repository.getTemp(city)?.enqueue(object : Callback<Post> {
+        repository.getTemp(city).enqueue(object : Callback<Post> {
             override fun onFailure(call: Call<Post>, t: Throwable) {
                 viewState.endSending()
                 viewState.showError(t.message!!)
@@ -29,8 +29,10 @@ class ShowTempPresenter(private val repository: Repository): MvpPresenter<ShowTe
                 viewState.endSending()
 
                 if (response.isSuccessful){
-                    val temp = ""
+                    val temp = response.body().toString()
                     viewState.showSuccess(temp)
+                }else{
+                    viewState.showError(response.errorBody().toString())
                 }
             }
         })

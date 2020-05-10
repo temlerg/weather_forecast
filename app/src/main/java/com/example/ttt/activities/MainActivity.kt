@@ -28,7 +28,10 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        showTempPresenter.getTemp("Moscow")
+
+        search_button.setOnClickListener {
+            showTempPresenter.getTemp("Moscow")
+        }
     }
     
     private fun getCity() = gorod_edit.text.toString()
@@ -42,6 +45,7 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
     }
 
     override fun showSuccess(temp: String) {
+        Toast.makeText(this, temp, Toast.LENGTH_LONG).show()
     }
 
     override fun showError(error: String) {
