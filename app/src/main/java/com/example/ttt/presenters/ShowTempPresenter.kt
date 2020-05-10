@@ -4,7 +4,6 @@ import com.example.ttt.R
 import com.example.ttt.data.Repository
 import com.example.ttt.data.models.Post
 import com.example.ttt.views.ShowTempView
-import moxy.InjectViewState
 import moxy.MvpPresenter
 import retrofit2.Call
 import retrofit2.Callback

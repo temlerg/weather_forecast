@@ -6,6 +6,6 @@ import retrofit2.Call
 
 class Repository {
     fun getTemp(city: String): Call<Post>? {
-        return NetworkService.instance?.getJSONApi()?.getPostWithID(city)
+        return NetworkService.getApiRepositories().getPostWithID(city)
     }
 }
