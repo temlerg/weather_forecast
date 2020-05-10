@@ -47,7 +47,7 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
     }
 
     override fun showSuccess(temp: WeatherToday) {
-        Toast.makeText(this, temp.city, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, temp.toString(), Toast.LENGTH_LONG).show()
     }
 
     override fun showSuccess(temp: WeatherFiveDays) {

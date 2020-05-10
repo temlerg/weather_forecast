@@ -66,7 +66,16 @@ data class Lists(
     val wind: Wind?,
     @SerializedName("main")
     @Expose
-    val main: Main?
+    val main: Main?,
+    @SerializedName("weather")
+    @Expose
+    val weather: List<WeatherList>?
+)
+
+data class WeatherList(
+    @SerializedName("main")
+    @Expose
+    val main: String?
 )
 
 data class Main(
