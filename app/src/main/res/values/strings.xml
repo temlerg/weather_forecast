@@ -5,4 +5,12 @@
     <string name="error_empty_city_input">Строка не должна быть пустой</string>
     <string name="text_in_bot_main">Показать погоду</string>
     <string name="settings_text_main">Настройки</string>
+    <string name="type_settings">Тип представления данных о погоде</string>
+    <string name="grad_settings">Шкалы измерения температуры</string>
+    <string name="temp_like">237</string>
+    <string name="city_one_day">город</string>
+    <string name="statys_w">Статус погоды</string>
+    <string name="temp_main">237</string>
+    <string name="like_w">Ощущаеться как</string>
+    <string name="todo">TODO</string>
 </resources>
