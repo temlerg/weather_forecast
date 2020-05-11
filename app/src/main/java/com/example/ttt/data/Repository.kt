@@ -1,7 +1,7 @@
 package com.example.ttt.data
 
-import android.util.Log
 import com.example.ttt.data.models.Post
+import com.example.ttt.data.models.WeatherFiveDays
 import com.example.ttt.data.models.WeatherToday
 import com.example.ttt.data.network.NetworkService
 import com.example.ttt.utils.appID
@@ -42,6 +42,33 @@ class Repository {
                     feels_like = feels_like,
                     sea_level = sea_level,
                     wind_speed = wind_speed
+                )
+            }else
+                return null
+        }
+        else
+            return null
+    }
+
+    fun getWeatherFiveDays(post: Post): WeatherFiveDays? {
+        val cityName = post.city?.name
+        if(post.list != null) {
+            val temp = post.list[0].main?.temp
+            var main: String? = ""
+            var dt = post.list[0].dt
+
+            if (post.list[0].weather != null){
+                main = post.list[0].weather?.get(0)?.main
+            }
+
+            if (!cityName.isNullOrEmpty() && dt != null &&
+                temp != null) {
+
+                return WeatherFiveDays(
+                    city = cityName,
+                    main = main,
+                    temp = temp,
+                    dt = dt
                 )
             }else
                 return null

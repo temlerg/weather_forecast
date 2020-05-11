@@ -1,9 +1,10 @@
 package com.example.ttt.presenters
 
-import android.util.Log
 import com.example.ttt.R
 import com.example.ttt.data.Repository
+import com.example.ttt.data.localDB.SharedPrefDB
 import com.example.ttt.data.models.Post
+import com.example.ttt.utils.constants
 import com.example.ttt.views.ShowTempView
 import moxy.MvpPresenter
 import retrofit2.Call
@@ -31,11 +32,19 @@ class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowT
 
                 if (response.isSuccessful) {
                     if (response.body() != null){
-                        val temp = repository.getWeatherToday(response.body()!!)
-                        if (temp != null)
-                            viewState.showSuccess(temp)
-                        else
-                            viewState.showError("error")
+                        if (SharedPrefDB.getSettingDay() == constants.TODAY){
+                            val temp = repository.getWeatherToday(response.body()!!)
+                            if (temp != null)
+                                viewState.showSuccess(temp)
+                            else
+                                viewState.showError("error")
+                        }else{
+                            val temp = repository.getWeatherFiveDays(response.body()!!)
+                            if (temp != null)
+                                viewState.showSuccess(temp)
+                            else
+                                viewState.showError("error")
+                        }
                     }else
                         viewState.showError("error")
                 } else {

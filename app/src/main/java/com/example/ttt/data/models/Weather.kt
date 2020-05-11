@@ -15,5 +15,5 @@ data class WeatherFiveDays(
     val city: String,
     val temp: Float,
     val main: String?,
-    val dt_txt: String
+    val dt: Float
 )

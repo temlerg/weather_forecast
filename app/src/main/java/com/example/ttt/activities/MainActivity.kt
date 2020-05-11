@@ -51,6 +51,7 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
     }
 
     override fun showSuccess(temp: WeatherFiveDays) {
+        Toast.makeText(this, temp.toString(), Toast.LENGTH_LONG).show()
     }
 
     override fun showError(error: String) {
