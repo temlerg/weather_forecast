@@ -105,9 +105,9 @@
         android:layout_width="62sp"
         android:layout_height="62sp"
         android:src="@drawable/ic_repet_name_city"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="349dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toEndOf="@+id/gorod_name_1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
