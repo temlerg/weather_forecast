@@ -4,7 +4,7 @@ import com.example.ttt.R
 import com.example.ttt.data.Repository
 import com.example.ttt.data.localDB.SharedPrefDB
 import com.example.ttt.data.models.Post
-import com.example.ttt.utils.constants
+import com.example.ttt.utils.constantsDay
 import com.example.ttt.views.ShowTempView
 import moxy.MvpPresenter
 import retrofit2.Call
@@ -32,7 +32,7 @@ class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowT
 
                 if (response.isSuccessful) {
                     if (response.body() != null){
-                        if (SharedPrefDB.getSettingDay() == constants.TODAY){
+                        if (SharedPrefDB.getSettingDay() == constantsDay.FIVEDAYS){
                             val temp = repository.getWeatherToday(response.body()!!)
                             if (temp != null)
                                 viewState.showSuccess(temp)

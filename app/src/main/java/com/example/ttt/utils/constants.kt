@@ -1,5 +1,9 @@
 package com.example.ttt.utils
 
-enum class constants{
-    TODAY,FIVEDAYS
+enum class constantsDay{
+    TODAY,FIVEDAYS,
+}
+
+enum class constantsTemp{
+    CENTIGRADE,FAHRENHEIT,KELVIN
 }

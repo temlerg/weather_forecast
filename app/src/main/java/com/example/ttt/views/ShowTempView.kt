@@ -14,7 +14,7 @@ interface ShowTempView: MvpView {
 
     fun showSuccess(temp: WeatherToday)
 
-    fun showSuccess(temp: WeatherFiveDays)
+    fun showSuccess(temp: List<WeatherFiveDays>)
 
     fun showError(error: String)
 

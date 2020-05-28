@@ -1,6 +1,7 @@
 package com.example.ttt.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.ttt.R
@@ -50,8 +51,9 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
         Toast.makeText(this, temp.toString(), Toast.LENGTH_LONG).show()
     }
 
-    override fun showSuccess(temp: WeatherFiveDays) {
-        Toast.makeText(this, temp.toString(), Toast.LENGTH_LONG).show()
+    override fun showSuccess(temp: List<WeatherFiveDays>) {
+        Log.d("fefvdsv",temp.size.toString())
+        Log.d("fefvdsv",temp.toString())
     }
 
     override fun showError(error: String) {

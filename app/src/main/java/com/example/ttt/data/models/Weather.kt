@@ -12,8 +12,7 @@ data class WeatherToday(
     val wind_speed: Float
 )
 data class WeatherFiveDays(
-    val city: String,
     val temp: Float,
     val main: String?,
-    val dt: Float
+    val dt: String
 )

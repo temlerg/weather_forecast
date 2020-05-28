@@ -60,7 +60,7 @@ data class Coord(
 data class Lists(
     @SerializedName("dt")
     @Expose
-    val dt: Float?,
+    val dt: Long?,
     @SerializedName("wind")
     @Expose
     val wind: Wind?,
