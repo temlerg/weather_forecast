@@ -1,10 +1,13 @@
 package com.example.ttt.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.ttt.R
 import com.example.ttt.data.Repository
+import com.example.ttt.data.models.WeatherFiveDays
+import com.example.ttt.data.models.WeatherToday
 import com.example.ttt.presenters.ShowTempPresenter
 import com.example.ttt.views.ShowTempView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,9 +31,17 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        showTempPresenter.getTemp("Moscow")
+
+        search_button.setOnClickListener {
+            showTempPresenter.getTemp("Москва")
+        }
     }
-    
+
+
+    /*
+    тут должна быть часть кода, когда у нас введен не правильный город, и вернась ошибка на запрос, то выводим диалоговое окно diolog_error
+     */
+
     private fun getCity() = gorod_edit.text.toString()
 
     override fun startSending() {
@@ -41,7 +52,13 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
         progressBar.visibility = View.GONE
     }
 
-    override fun showSuccess(temp: String) {
+    override fun showSuccess(temp: WeatherToday) {
+        Toast.makeText(this, temp.toString(), Toast.LENGTH_LONG).show()
+    }
+
+    override fun showSuccess(temp: List<WeatherFiveDays>) {
+        Log.d("fefvdsv",temp.size.toString())
+        Log.d("fefvdsv",temp.toString())
     }
 
     override fun showError(error: String) {

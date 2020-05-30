@@ -12,7 +12,7 @@
     <string name="statys_w">Статус погоды</string>
     <string name="temp_main">237</string>
     <string name="like_w">Ощущаеться как</string>
-    <string name="todo">TODO</string>
+
     <string name="github_com">github.com</string>
     <string name="temlerg">Temlerg</string>
     <string name="arlanchikdrey">ArlanchikDrey</string>
@@ -26,4 +26,5 @@
     <string name="max_t_zna">300к в н сек</string>
     <string name="min_t_zna">300к в н сек</string>
     <string name="speed_w_zna">300к в н сек</string>
+    <string name="todo">TODO</string>
 </resources>
