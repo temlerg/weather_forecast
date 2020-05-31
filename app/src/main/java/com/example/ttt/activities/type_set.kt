@@ -1,13 +1,13 @@
 package com.example.ttt.activities
 
-
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import com.example.ttt.utils.constantsDay
 
-class tupe_set : DialogFragment() {
+class tupe_set(val listener: (constantsDay)-> Unit) : DialogFragment() {
 
     private val catNames = arrayOf("Прогноз погоды на 1 день", "Прогноз погоды на 5 дней")
 
@@ -20,6 +20,10 @@ class tupe_set : DialogFragment() {
                 ) { dialog, item ->
                     Toast.makeText(activity, "Вы выбрали:  ${catNames[item]}",
                         Toast.LENGTH_SHORT).show()
+                    when(item){
+                        0 -> listener.invoke(constantsDay.TODAY)
+                        1 -> listener.invoke(constantsDay.FIVEDAYS)
+                    }
                 }
                 .setPositiveButton("OK"
                 ) { dialog, id ->

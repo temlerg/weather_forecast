@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ttt.R
+import com.example.ttt.activities.dialog_erroe
 import com.example.ttt.data.localDB.SharedPrefDB
 import com.example.ttt.utils.constantsDay
 import kotlinx.android.synthetic.main.activity_main_fragment.*
@@ -25,10 +26,14 @@ class MainFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         search_button.setOnClickListener {
-            if(SharedPrefDB.getSettingDay() == constantsDay.TODAY){
-                openPage(OneDayFragment.getInstance("Moscow"))
-            }else{
-                openPage(ListFragment.getInstance("Moscow"))
+            if (getCity().isEmpty()){
+                dialog_erroe().show(activity.supportFragmentManager,"dialog")
+            }else {
+                if (SharedPrefDB.getSettingDay() == constantsDay.TODAY) {
+                    openPage(OneDayFragment.getInstance(getCity()))
+                } else {
+                    openPage(ListFragment.getInstance(getCity()))
+                }
             }
         }
 
@@ -37,9 +42,6 @@ class MainFragment: BaseFragment() {
         }
     }
 
-    /*
-   тут должна быть часть кода, когда у нас введен не правильный город, и вернась ошибка на запрос, то выводим диалоговое окно diolog_error
-    */
     private fun openPage(fragment: BaseFragment){
         activity.supportFragmentManager
             .beginTransaction()

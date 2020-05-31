@@ -32,9 +32,9 @@ object SharedPrefDB: SharedPrefDBService{
 
     override fun putSettingDay(putConstantsDay: constantsDay){
         if (putConstantsDay == constantsDay.TODAY)
-            sharedPreferencesEditor.putString(KEY_DAY,TODAY)
+            sharedPreferencesEditor.putString(KEY_DAY,TODAY).commit()
         else
-            sharedPreferencesEditor.putString(KEY_DAY,FIVEDAYS)
+            sharedPreferencesEditor.putString(KEY_DAY,FIVEDAYS).commit()
     }
 
     override fun getSettingTemp(): constantsTemp {
@@ -49,10 +49,10 @@ object SharedPrefDB: SharedPrefDBService{
 
     override fun putSettingTemp(putConstantsTemp: constantsTemp) {
         if (putConstantsTemp == constantsTemp.KELVIN)
-            sharedPreferencesEditor.putString(KEY_TEMP,KELVIN)
+            sharedPreferencesEditor.putString(KEY_TEMP,KELVIN).commit()
         else if (putConstantsTemp == constantsTemp.FAHRENHEIT)
-            sharedPreferencesEditor.putString(KEY_TEMP,FAHRENHEIT)
+            sharedPreferencesEditor.putString(KEY_TEMP,FAHRENHEIT).commit()
         else
-            sharedPreferencesEditor.putString(KEY_TEMP,CENTIGRADE)
+            sharedPreferencesEditor.putString(KEY_TEMP,CENTIGRADE).commit()
     }
 }
