@@ -1,5 +1,7 @@
 package com.example.ttt.views
 
+import com.example.ttt.data.models.WeatherFiveDays
+import com.example.ttt.data.models.WeatherToday
 import moxy.MvpView
 import moxy.viewstate.strategy.OneExecutionStateStrategy
 import moxy.viewstate.strategy.StateStrategyType
@@ -10,7 +12,9 @@ interface ShowTempView: MvpView {
 
     fun endSending()
 
-    fun showSuccess(temp: String)
+    fun showSuccess(temp: WeatherToday)
+
+    fun showSuccess(temp: List<WeatherFiveDays>)
 
     fun showError(error: String)
 

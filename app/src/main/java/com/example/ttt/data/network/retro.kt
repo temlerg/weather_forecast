@@ -1,33 +1,30 @@
 package com.example.ttt.data.network
 
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+object NetworkService {
+    private const val BASE_URL = "http://api.openweathermap.org"
 
-class NetworkService private constructor() {
-    private val mRetrofit: Retrofit
-
-    companion object {
-        private var mInstance: NetworkService? = null
-        private const val BASE_URL = "http://api.openweathermap.org"
-        val instance: NetworkService?
-            get() {
-                if (mInstance == null) {
-                    mInstance =
-                        NetworkService()
-                }
-                return mInstance
-            }
+    private val loggingInterceptor = run {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.apply {
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+        }
     }
 
-    init {
-        mRetrofit = Retrofit.Builder()
+    private val client = OkHttpClient.Builder()
+        .addInterceptor(loggingInterceptor)
+        .build()
+
+    fun getApiRepositories(): JSONPlaceHolderApi{
+        return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
-    }
-
-    fun getJSONApi(): JSONPlaceHolderApi {
-        return mRetrofit.create(JSONPlaceHolderApi::class.java)
+            .create(JSONPlaceHolderApi::class.java)
     }
 }

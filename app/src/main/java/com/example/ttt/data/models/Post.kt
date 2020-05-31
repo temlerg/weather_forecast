@@ -5,12 +5,6 @@ import com.google.gson.annotations.SerializedName
 
 
 data class Post(
-    @SerializedName("Codebeautify")
-    @Expose
-    val codebeautify: Codebeautify
-)
-
-data class Codebeautify(
     @SerializedName("cod")
     @Expose
     val cod: String?,
@@ -22,11 +16,10 @@ data class Codebeautify(
     val cnt: Long = 40,
     @SerializedName("list")
     @Expose
-    val list: List<Any> = ArrayList<Any>(),
+    val list: List<Lists>?,
     @SerializedName("city")
     @Expose
-    val city: City?
-)
+    val city: City?)
 
 data class City(
     @SerializedName("id")
@@ -62,4 +55,52 @@ data class Coord(
     @SerializedName("lon")
     @Expose
     var lon: Float = 0f
+)
+
+data class Lists(
+    @SerializedName("dt")
+    @Expose
+    val dt: Long?,
+    @SerializedName("wind")
+    @Expose
+    val wind: Wind?,
+    @SerializedName("main")
+    @Expose
+    val main: Main?,
+    @SerializedName("weather")
+    @Expose
+    val weather: List<WeatherList>?
+)
+
+data class WeatherList(
+    @SerializedName("main")
+    @Expose
+    val main: String?
+)
+
+data class Main(
+    @SerializedName("sea_level")
+    @Expose
+    val sea_level: Int,
+    @SerializedName("feels_like")
+    @Expose
+    val feels_like: Float,
+    @SerializedName("temp_min")
+    @Expose
+    val temp_min: Float,
+    @SerializedName("temp_max")
+    @Expose
+    val temp_max: Float,
+    @SerializedName("temp")
+    @Expose
+    val temp: Float,
+    @SerializedName("humidity")
+    @Expose
+    val humidity: Int
+)
+
+data class Wind(
+    @SerializedName("speed")
+    @Expose
+    val speed: Float = 0f
 )
