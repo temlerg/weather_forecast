@@ -36,7 +36,12 @@ class MainActivity : MvpAppCompatActivity(), ShowTempView {
             showTempPresenter.getTemp("Москва")
         }
     }
-    
+
+
+    /*
+    тут должна быть часть кода, когда у нас введен не правильный город, и вернась ошибка на запрос, то выводим диалоговое окно diolog_error
+     */
+
     private fun getCity() = gorod_edit.text.toString()
 
     override fun startSending() {
