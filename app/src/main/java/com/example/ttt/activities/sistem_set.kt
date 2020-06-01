@@ -9,7 +9,7 @@ import com.example.ttt.utils.constantsTemp
 
 class sistem_set(val listener: (constantsTemp) -> Unit) : DialogFragment() {
 
-    private val catNames = arrayOf("Цельсия", "Фарренгейта", "Кульвина")
+    private val catNames = arrayOf("Цельсия", "Фарренгейта", "Кельвина")
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {

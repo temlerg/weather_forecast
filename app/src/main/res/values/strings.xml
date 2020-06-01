@@ -11,17 +11,17 @@
     <string name="city_one_day">город</string>
     <string name="statys_w">Статус погоды</string>
     <string name="temp_main">237</string>
-    <string name="like_w">Ощущаеться как : </string>
+    <string name="like_w">Ощущаеться как: </string>
 
     <string name="github_com">github.com</string>
     <string name="temlerg">Temlerg</string>
     <string name="arlanchikdrey">ArlanchikDrey</string>
     <string name="speed">м/с</string>
     <string name="persent">%</string>
-    <string name="min_t">Минимальная температура :</string>
-    <string name="max_t">Максимальная температура :</string>
-    <string name="speed_w">Скорость ветра :</string>
-    <string name="vlaj">Влажность :</string>
+    <string name="min_t">Минимальная температура:</string>
+    <string name="max_t">Максимальная температура:</string>
+    <string name="speed_w">Скорость ветра:</string>
+    <string name="vlaj">Влажность:</string>
     <string name="vlaj_zna">300к в н сек</string>
     <string name="max_t_zna">300к в н сек</string>
     <string name="min_t_zna">300к в н сек</string>
