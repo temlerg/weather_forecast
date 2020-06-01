@@ -19,7 +19,8 @@ data class Post(
     val list: List<Lists>?,
     @SerializedName("city")
     @Expose
-    val city: City?)
+    val city: City?
+)
 
 data class City(
     @SerializedName("id")

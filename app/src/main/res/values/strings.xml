@@ -11,7 +11,7 @@
     <string name="city_one_day">город</string>
     <string name="statys_w">Статус погоды</string>
     <string name="temp_main">237</string>
-    <string name="like_w">Ощущаеться как</string>
+    <string name="like_w">Ощущаеться как : </string>
 
     <string name="github_com">github.com</string>
     <string name="temlerg">Temlerg</string>

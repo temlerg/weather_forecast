@@ -31,21 +31,21 @@ class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowT
                 viewState.endSending()
 
                 if (response.isSuccessful) {
-                    if (response.body() != null){
-                        if (SharedPrefDB.getSettingDay() == constantsDay.FIVEDAYS){
+                    if (response.body() != null) {
+                        if (SharedPrefDB.getSettingDay() != constantsDay.FIVEDAYS) {
                             val temp = repository.getWeatherToday(response.body()!!)
                             if (temp != null)
                                 viewState.showSuccess(temp)
                             else
                                 viewState.showError("error")
-                        }else{
+                        } else {
                             val temp = repository.getWeatherFiveDays(response.body()!!)
                             if (temp != null)
                                 viewState.showSuccess(temp)
                             else
                                 viewState.showError("error")
                         }
-                    }else
+                    } else
                         viewState.showError("error")
                 } else {
                     viewState.showError(response.errorBody().toString())

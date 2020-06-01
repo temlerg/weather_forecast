@@ -86,14 +86,13 @@ class Repository {
     }
 
     // example - 25.02 09:03
-    fun mapLongTimeToDate(time: Long?): String?{
-        if (time != null){
+    fun mapLongTimeToDate(time: Long?): String? {
+        if (time != null) {
             val date = Date(time * 1000)
             val format = SimpleDateFormat("dd.MM HH:mm")
 
             return format.format(date)
-        }
-        else
+        } else
             return null
     }
 }

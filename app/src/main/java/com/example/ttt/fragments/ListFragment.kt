@@ -10,10 +10,11 @@ import com.example.ttt.data.models.WeatherFiveDays
 import com.example.ttt.data.models.WeatherToday
 import com.example.ttt.presenters.ShowTempPresenter
 import com.example.ttt.views.ShowTempView
+import kotlinx.android.synthetic.main.for_5_day.*
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 
-class ListFragment private constructor(): BaseFragment(), ShowTempView {
+class ListFragment private constructor() : BaseFragment(), ShowTempView {
     val repository: Repository = Repository()
     private var city: String? = null
 
@@ -25,16 +26,24 @@ class ListFragment private constructor(): BaseFragment(), ShowTempView {
         return ShowTempPresenter(repository)
     }
 
-    companion object{
+    companion object {
         const val CITY_KEY = "city"
 
         fun getInstance(city: String): ListFragment {
             val fragment = ListFragment()
             val args = Bundle()
-            args.putString(CITY_KEY,city)
+            args.putString(CITY_KEY, city)
             fragment.arguments = args
             return fragment
         }
+    }
+
+    private fun openPage(fragment: BaseFragment) {
+        activity.supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment)
+            .addToBackStack("")
+            .commit()
     }
 
     override fun onCreateView(
@@ -51,6 +60,10 @@ class ListFragment private constructor(): BaseFragment(), ShowTempView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         city = arguments?.getString(CITY_KEY)
+
+        back_city_5_day.setOnClickListener {
+            openPage(MainFragment())
+        }
     }
 
     override fun startSending() {

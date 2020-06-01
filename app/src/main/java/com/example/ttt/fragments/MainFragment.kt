@@ -10,7 +10,7 @@ import com.example.ttt.data.localDB.SharedPrefDB
 import com.example.ttt.utils.constantsDay
 import kotlinx.android.synthetic.main.activity_main_fragment.*
 
-class MainFragment: BaseFragment() {
+class MainFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,9 +26,9 @@ class MainFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         search_button.setOnClickListener {
-            if (getCity().isEmpty()){
-                dialog_erroe().show(activity.supportFragmentManager,"dialog")
-            }else {
+            if (getCity().isEmpty()) {
+                dialog_erroe().show(activity.supportFragmentManager, "dialog")
+            } else {
                 if (SharedPrefDB.getSettingDay() == constantsDay.TODAY) {
                     openPage(OneDayFragment.getInstance(getCity()))
                 } else {
@@ -36,18 +36,18 @@ class MainFragment: BaseFragment() {
                 }
             }
         }
-
         settings.setOnClickListener {
             openPage(SettingFragment())
         }
     }
 
-    private fun openPage(fragment: BaseFragment){
+    private fun openPage(fragment: BaseFragment) {
         activity.supportFragmentManager
             .beginTransaction()
             .replace(R.id.container, fragment)
             .addToBackStack("")
             .commit()
     }
+
     private fun getCity() = gorod_edit.text.toString()
 }

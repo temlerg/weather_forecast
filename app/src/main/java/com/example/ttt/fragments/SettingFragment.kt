@@ -32,6 +32,14 @@ class SettingFragment : BaseFragment() {
         )
     }
 
+    private fun openPage(fragment: BaseFragment){
+        activity.supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment)
+            .addToBackStack("")
+            .commit()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         textView.setOnClickListener {
@@ -49,6 +57,10 @@ class SettingFragment : BaseFragment() {
         }
         tv_open_url_andrew.setOnClickListener {
             openGitHubPage(ANDREW_PAGE)
+        }
+
+        back_settings.setOnClickListener{
+            openPage(MainFragment())
         }
     }
 
