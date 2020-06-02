@@ -5,13 +5,14 @@ import com.example.ttt.data.models.WeatherFiveDays
 import com.example.ttt.data.models.WeatherToday
 import com.example.ttt.data.network.NetworkService
 import com.example.ttt.utils.appID
+import com.example.ttt.utils.languageResponse
 import retrofit2.Call
 import java.text.SimpleDateFormat
 import java.util.*
 
 class Repository {
     fun getTemp(city: String): Call<Post> {
-        return NetworkService.getApiRepositories().getPostWithID(city = city, appid = appID)
+        return NetworkService.getApiRepositories().getPostWithID(city = city, lang = languageResponse,appid = appID)
     }
 
     fun getWeatherToday(post: Post): WeatherToday? {
