@@ -6,40 +6,11 @@
     android:layout_height="match_parent"
     android:background="#E0E0E0">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="96dp"
-        android:src="@drawable/fareng"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/max_temp"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.161"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="64dp"
-
-        android:src="@drawable/fareng"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/min_temp"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.132"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/like_temp"
-        android:layout_width="39dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:text="@string/temp_like"
         android:textColor="#000"
@@ -95,9 +66,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="131dp"
-        android:layout_height="125dp"
-        android:src="@drawable/zont"
+        android:layout_width="96dp"
+        android:layout_height="92dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +96,7 @@
         android:id="@+id/temp_teck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="5dp"
         android:text="@string/temp_main"
         android:textSize="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -136,18 +106,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.179" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="0.6"
-        android:src="@drawable/celci"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
 
     <TextView
         android:id="@+id/textView6"
@@ -159,7 +117,7 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.34" />
@@ -178,21 +136,12 @@
         app:layout_constraintVertical_bias="0.367"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:layout_width="29dp"
-        android:layout_height="28dp"
-        android:src="@drawable/fareng"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/like_temp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="64dp"
         android:text="@string/min_t"
         android:textColor="#000"
@@ -206,6 +155,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="96dp"
         android:text="@string/max_t"
         android:textColor="#000"
@@ -220,13 +170,15 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="32dp"
         android:text="@string/speed_w"
         android:textColor="#000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintVertical_bias="0.735" />

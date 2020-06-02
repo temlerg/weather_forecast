@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkService {
-    private const val BASE_URL = "http://api.openweathermap.org"
+    private const val BASE_URL = "https://api.openweathermap.org"
 
     private val loggingInterceptor = run {
         val interceptor = HttpLoggingInterceptor()

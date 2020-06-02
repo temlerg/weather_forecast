@@ -16,6 +16,7 @@ class Repository {
 
     fun getWeatherToday(post: Post): WeatherToday? {
         val cityName = post.city?.name
+        val cod = post.cod
         if (post.list != null) {
             val humidity = post.list[0].main?.humidity
             val temp = post.list[0].main?.temp
@@ -36,6 +37,7 @@ class Repository {
             ) {
 
                 return WeatherToday(
+                    cod = cod.toString(),
                     city = cityName,
                     main = main,
                     humidity = humidity,

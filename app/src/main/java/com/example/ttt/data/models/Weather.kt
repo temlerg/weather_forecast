@@ -1,6 +1,7 @@
 package com.example.ttt.data.models
 
 data class WeatherToday(
+    val cod: String,
     val city: String,
     val sea_level: Int,
     val feels_like: Float,

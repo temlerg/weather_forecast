@@ -13,7 +13,7 @@ data class Post(
     val message: Float = 0f,
     @SerializedName("cnt")
     @Expose
-    val cnt: Long = 40,
+    val cnt: Long = 34,
     @SerializedName("list")
     @Expose
     val list: List<Lists>?,
