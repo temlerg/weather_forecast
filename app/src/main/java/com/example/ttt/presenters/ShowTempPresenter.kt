@@ -1,5 +1,6 @@
 package com.example.ttt.presenters
 
+import android.util.Log
 import com.example.ttt.R
 import com.example.ttt.data.Repository
 import com.example.ttt.data.localDB.SharedPrefDB
@@ -7,9 +8,11 @@ import com.example.ttt.data.models.Post
 import com.example.ttt.utils.constantsDay
 import com.example.ttt.views.ShowTempView
 import moxy.MvpPresenter
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowTempView>() {
 
@@ -47,8 +50,10 @@ class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowT
                         }
                     } else
                         viewState.showError("error")
-                } else {
-                    viewState.showError(response.errorBody().toString())
+                } else if (response.errorBody() != null) {
+                    val jObjError = JSONObject(response.errorBody()!!.string())
+                    val error = jObjError.getString("message")
+                    viewState.showError(error)
                 }
             }
         })
