@@ -7,24 +7,15 @@
     <string name="settings_text_main">Настройки</string>
     <string name="type_settings">Тип представления данных о погоде</string>
     <string name="grad_settings">Шкалы измерения температуры</string>
-    <string name="temp_like">237</string>
-    <string name="city_one_day">город</string>
-    <string name="statys_w">Статус погоды</string>
-    <string name="temp_main">237</string>
-    <string name="like_w">Ощущаеться как: </string>
+    <string name="like_w">Ощущается как: </string>
 
     <string name="github_com">github.com</string>
     <string name="temlerg">Temlerg</string>
     <string name="arlanchikdrey">ArlanchikDrey</string>
-    <string name="speed">м/с</string>
-    <string name="persent">%</string>
+
     <string name="min_t">Минимальная температура:</string>
     <string name="max_t">Максимальная температура:</string>
     <string name="speed_w">Скорость ветра:</string>
     <string name="vlaj">Влажность:</string>
-    <string name="vlaj_zna">300к в н сек</string>
-    <string name="max_t_zna">300к в н сек</string>
-    <string name="min_t_zna">300к в н сек</string>
-    <string name="speed_w_zna">300к в н сек</string>
     <string name="todo">TODO</string>
 </resources>

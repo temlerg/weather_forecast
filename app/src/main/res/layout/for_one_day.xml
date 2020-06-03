@@ -11,8 +11,6 @@
         android:id="@+id/like_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="@string/temp_like"
         android:textColor="#000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:gravity="bottom"
-        android:text="@string/city_one_day"
         android:textColor="#000"
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +52,7 @@
         android:id="@+id/back_city_1_day"
         android:layout_width="62dp"
         android:layout_height="62dp"
-        android:src="@drawable/ic_repet_name_city"
+        android:src="@drawable/ic_keyboard_backspace_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -66,7 +63,7 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="96dp"
+        android:layout_width="92dp"
         android:layout_height="92dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,7 +79,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:text="@string/statys_w"
         android:textColor="#000"
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +93,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:text="@string/temp_main"
         android:textSize="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
@@ -202,7 +197,6 @@
         android:id="@+id/vlagnoste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/temp_main"
         android:textColor="#000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/scoroste_vetra"
@@ -217,8 +211,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-
-        android:text="@string/temp_main"
         android:textColor="#000"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -233,7 +225,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="@string/temp_main"
         android:textColor="#000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/max_temp"
@@ -250,7 +241,6 @@
 
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/temp_main"
         android:textColor="#000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/min_temp"

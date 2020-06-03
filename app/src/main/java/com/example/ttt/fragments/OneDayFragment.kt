@@ -18,11 +18,9 @@ import kotlinx.android.synthetic.main.for_one_day.*
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 
-
 class OneDayFragment private constructor() : BaseFragment(), ShowTempView {
     val repository: Repository = Repository()
     private var city: String? = null
-
 
     @InjectPresenter
     lateinit var showTempPresenter: ShowTempPresenter
@@ -66,7 +64,7 @@ class OneDayFragment private constructor() : BaseFragment(), ShowTempView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        city = arguments?.getString(ListFragment.CITY_KEY)
+        city = arguments?.getString(CITY_KEY)
 
         back_city_1_day.setOnClickListener {
             openPage(MainFragment())
@@ -88,19 +86,15 @@ class OneDayFragment private constructor() : BaseFragment(), ShowTempView {
         if (temp.main == "Clear") {
             status_w.setText("Ясно")
             image.setImageResource(R.drawable.solnichko)
-            //activity.resources.getDrawable(R.drawable.solnichko)
         } else if (temp.main == "Rain") {
             status_w.setText("Дождь")
             image.setImageResource(R.drawable.zont)
 
-//            activity.resources.getDrawable(R.drawable.zont)
 
         } else if (temp.main == "Clouds") {
-            status_w.setText("Облочно")
+            status_w.setText("Облачно")
             image.setImageResource(R.drawable.mnogo_oblocshov)
-            //activity.resources.getDrawable(R.drawable.mnogo_oblocshov)
         }
-
 
         if (SharedPrefDB.getSettingTemp() == constantsTemp.KELVIN) {
             max_temp.setText((temp.temp_max).toInt().toString() + " K")
@@ -120,16 +114,16 @@ class OneDayFragment private constructor() : BaseFragment(), ShowTempView {
         }
         vlagnoste.setText(temp.humidity.toString() + "%")
         scoroste_vetra.setText(temp.wind_speed.toString() + "м/с")
-        if(temp.cod == "404"){
-            dialog_erroe().show(activity.supportFragmentManager, "dialog")
-        }
+
     }
 
     override fun showSuccess(temp: List<WeatherFiveDays>) {
     }
 
     override fun showError(error: String) {
-
+        if(error == "city not found"){
+            dialog_erroe().show(activity.supportFragmentManager, "dialog")
+        }
     }
 
     override fun showError(id: Int) {
