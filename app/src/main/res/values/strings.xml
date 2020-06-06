@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ttt</string>
+    <string name="app_name">Погода</string>
     <string name="dima">Димася топ</string>
     <string name="gor">Введите название города</string>
     <string name="error_empty_city_input">Строка не должна быть пустой</string>
