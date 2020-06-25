@@ -10,5 +10,9 @@ import retrofit2.http.Query
 
 interface JSONPlaceHolderApi {
     @GET("/data/2.5/forecast")
-    fun getPostWithID(@Query("q") city: String, @Query("lang") lang: String, @Query("appid") appid: String): Call<Post>
+    fun getPostWithID(
+        @Query("q") city: String,
+        @Query("lang") lang: String,
+        @Query("appid") appid: String
+    ): Call<Post>
 }

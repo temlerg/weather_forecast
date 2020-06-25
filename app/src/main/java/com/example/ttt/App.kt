@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import com.example.ttt.data.localDB.SharedPrefDB
 
-class App: Application() {
+class App : Application() {
 
     companion object {
         lateinit var instance: App

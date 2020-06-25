@@ -12,7 +12,8 @@ import java.util.*
 
 class Repository {
     fun getTemp(city: String): Call<Post> {
-        return NetworkService.getApiRepositories().getPostWithID(city = city, lang = languageResponse,appid = appID)
+        return NetworkService.getApiRepositories()
+            .getPostWithID(city = city, lang = languageResponse, appid = appID)
     }
 
     fun getWeatherToday(post: Post): WeatherToday? {

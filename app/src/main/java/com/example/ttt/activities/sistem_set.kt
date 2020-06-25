@@ -13,7 +13,7 @@ class sistem_set(val listener: (constantsTemp) -> Unit) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
-            val selectedItems = ArrayList<Int>() // Where we track the selected items
+            val selectedItems = ArrayList<Int>()
             val builder = AlertDialog.Builder(it)
             builder.setTitle("Система измерения температуры")
                 .setSingleChoiceItems(
@@ -29,14 +29,8 @@ class sistem_set(val listener: (constantsTemp) -> Unit) : DialogFragment() {
                         2 -> listener.invoke(constantsTemp.KELVIN)
                     }
                 }
-                .setPositiveButton(
-                    "OK"
-                ) { dialog, id ->
-                    // User clicked OK, so save the selectedItems results somewhere
-                    // or return them to the component that opened the dialog
-                }
-                .setNegativeButton("Отмена") { dialog, id ->
-                }
+                .setPositiveButton("OK") { dialog, id -> }
+                .setNegativeButton("Отмена") { dialog, id -> }
 
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")

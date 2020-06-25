@@ -19,7 +19,7 @@ object NetworkService {
         .addInterceptor(loggingInterceptor)
         .build()
 
-    fun getApiRepositories(): JSONPlaceHolderApi{
+    fun getApiRepositories(): JSONPlaceHolderApi {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

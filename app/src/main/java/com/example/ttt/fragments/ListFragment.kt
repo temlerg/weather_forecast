@@ -70,7 +70,7 @@ class ListFragment private constructor() : BaseFragment(), ShowTempView {
         }
 
         showTempPresenter.getTemp(city.toString())
-        gorod_name_2.setText(city.toString())
+        gorod_name_2.text = city.toString()
     }
 
     override fun startSending() {
@@ -90,7 +90,7 @@ class ListFragment private constructor() : BaseFragment(), ShowTempView {
     }
 
     override fun showError(error: String) {
-        if(error == "city not found"){
+        if (error == "city not found") {
             dialog_erroe().show(activity.supportFragmentManager, "dialog")
         }
     }

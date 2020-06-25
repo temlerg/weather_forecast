@@ -35,26 +35,24 @@ class MainAdapter(var items: List<WeatherFiveDays>) :
 
 
             if (item.main == "Clear") {
-                status.setText("Ясно")
+                status.text = "Ясно"
                 ic.setImageResource(R.drawable.solnichko)
             } else if (item.main == "Rain") {
-                status.setText("Дождь")
+                status.text = "Дождь"
                 ic.setImageResource(R.drawable.zont)
             } else if (item.main == "Clouds") {
-                status.setText("Облачно")
+                status.text = "Облачно"
                 ic.setImageResource(R.drawable.mnogo_oblocshov)
             }
 
             if (SharedPrefDB.getSettingTemp() == constantsTemp.KELVIN) {
-                temp.setText((item.temp).toInt().toString() + " K")
+                temp.text = (item.temp).toInt().toString() + " K"
             } else if (SharedPrefDB.getSettingTemp() == constantsTemp.CENTIGRADE) {
-                temp.setText((item.temp - 273).toInt().toString() + " ℃")
+                temp.text = (item.temp - 273).toInt().toString() + " ℃"
             } else {
-                temp.setText(((item.temp - 273) * 9 / 5 + 32).toInt().toString() + " ℉")
+                temp.text = ((item.temp - 273) * 9 / 5 + 32).toInt().toString() + " ℉"
             }
 
-            //status.text = item.main
-            //temp.text = item.temp.toString()
             time.text = item.dt
         }
     }

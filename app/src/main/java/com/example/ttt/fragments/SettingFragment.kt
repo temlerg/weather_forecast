@@ -32,7 +32,7 @@ class SettingFragment : BaseFragment() {
         )
     }
 
-    private fun openPage(fragment: BaseFragment){
+    private fun openPage(fragment: BaseFragment) {
         activity.supportFragmentManager
             .beginTransaction()
             .replace(R.id.container, fragment)
@@ -45,12 +45,12 @@ class SettingFragment : BaseFragment() {
         textView.setOnClickListener {
             tupe_set {
                 setDay(it)
-            }.show(activity.supportFragmentManager,"settings")
+            }.show(activity.supportFragmentManager, "settings")
         }
         textView2.setOnClickListener {
-            sistem_set{
+            sistem_set {
                 setTemp(it)
-            }.show(activity.supportFragmentManager,"settings")
+            }.show(activity.supportFragmentManager, "settings")
         }
         textView14.setOnClickListener {
             openGitHubPage(DIMA_PAGE)
@@ -59,7 +59,7 @@ class SettingFragment : BaseFragment() {
             openGitHubPage(ANDREW_PAGE)
         }
 
-        back_settings.setOnClickListener{
+        back_settings.setOnClickListener {
             openPage(MainFragment())
         }
     }
@@ -75,11 +75,11 @@ class SettingFragment : BaseFragment() {
         }
     }
 
-    private fun setDay(constantsDay: constantsDay){
+    private fun setDay(constantsDay: constantsDay) {
         SharedPrefDB.putSettingDay(constantsDay)
     }
 
-    private fun setTemp(constantsTemp: constantsTemp){
+    private fun setTemp(constantsTemp: constantsTemp) {
         SharedPrefDB.putSettingTemp(constantsTemp)
     }
 }

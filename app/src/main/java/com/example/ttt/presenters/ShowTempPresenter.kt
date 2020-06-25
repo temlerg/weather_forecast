@@ -35,19 +35,18 @@ class ShowTempPresenter(private val repository: Repository) : MvpPresenter<ShowT
 
                 if (response.isSuccessful) {
                     if (response.body() != null) {
-                        if (SharedPrefDB.getSettingDay() != constantsDay.FIVEDAYS) {
-                            val temp = repository.getWeatherToday(response.body()!!)
-                            if (temp != null)
-                                viewState.showSuccess(temp)
-                            else
-                                viewState.showError("error")
-                        } else {
-                            val temp = repository.getWeatherFiveDays(response.body()!!)
-                            if (temp != null)
-                                viewState.showSuccess(temp)
-                            else
-                                viewState.showError("error")
-                        }
+
+                        val temp_one = repository.getWeatherToday(response.body()!!)
+                        if (temp_one != null)
+                            viewState.showSuccess(temp_one)
+                        else
+                            viewState.showError("error")
+                        val temp_5 = repository.getWeatherFiveDays(response.body()!!)
+                        if (temp_5 != null)
+                            viewState.showSuccess(temp_5)
+                        else
+                            viewState.showError("error")
+
                     } else
                         viewState.showError("error")
                 } else if (response.errorBody() != null) {
